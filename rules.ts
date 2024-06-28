@@ -8,9 +8,9 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
-        description: "Left Option -> Hyper Key",
+        description: "Tilde key -> Hyper Key",
         from: {
-          key_code: "left_option",
+          key_code: "grave_accent_and_tilde",
           modifiers: {
             optional: ["any"],
           },
@@ -77,15 +77,19 @@ const rules: KarabinerRules[] = [
       c: app("Google Chrome"),
       f: app("Firefox"),
       v: app("Visual Studio Code"),
+      // Design
+      d: app("Figma"),
       s: app("Slack"),
+      // Terminal
       t: app("Kitty"),
       n: app("Notes"),
-      g: app("ChatGPT"),
+      // AI
+      a: app("ChatGPT"),
       m: app("Google Meet"),
       z: app("zoom.us"),
       // Explorer
       e: app("Finder"),
-      w: open("Telegram"),
+      w: app("Telegram"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -187,6 +191,23 @@ const rules: KarabinerRules[] = [
       },
       d: {
         to: [{ key_code: "page_down" }],
+      },
+      // Magicmove via homerow.app
+      m: {
+        to: [{ key_code: "f", modifiers: ["right_control"] }],
+      },
+      // Scroll mode via homerow.app
+      s: {
+        to: [{ key_code: "j", modifiers: ["right_control"] }],
+      },
+      b: {
+        to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
+      },
+      t: {
+        to: [{ key_code: "page_down" }],
+      },
+      i: {
+        to: [{ key_code: "page_up" }],
       },
     },
 
