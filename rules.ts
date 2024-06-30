@@ -8,9 +8,9 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
-        description: "Tilde key -> Hyper Key",
+        description: "Spacebar key -> Hyper Key",
         from: {
-          key_code: "grave_accent_and_tilde",
+          key_code: "spacebar",
           modifiers: {
             optional: ["any"],
           },
@@ -33,7 +33,7 @@ const rules: KarabinerRules[] = [
         ],
         to_if_alone: [
           {
-            key_code: "escape",
+            key_code: "spacebar",
           },
         ],
         type: "basic",
@@ -74,22 +74,23 @@ const rules: KarabinerRules[] = [
     },
     // o = "Open" applications
     o: {
+      a: app("Arc"),
       c: app("Google Chrome"),
-      f: app("Firefox"),
-      v: app("Visual Studio Code"),
       // Design
       d: app("Figma"),
+      // Explorer
+      e: app("Finder"),
+      f: app("Firefox"),
+      n: app("Notes"),
+      // AI, *L*LMs
+      l: app("ChatGPT"),
+      // Messenger
+      m: app("Telegram"),
       s: app("Slack"),
       // Terminal
       t: app("Kitty"),
-      n: app("Notes"),
-      // AI
-      a: app("ChatGPT"),
-      m: app("Google Meet"),
+      v: app("Visual Studio Code"),
       z: app("zoom.us"),
-      // Explorer
-      e: app("Finder"),
-      w: app("Telegram"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -106,6 +107,37 @@ const rules: KarabinerRules[] = [
     //     open -g "raycast://customWindowManagementCommand?position=topRight&relativeWidth=0.5"
     //   `,
     // },
+
+    // i = "Input"
+    i: {
+      // change language
+      l: {
+        to: [
+          {
+            key_code: "spacebar",
+            modifiers: ["left_control", "left_option", "left_command"],
+          },
+        ],
+      },
+      // Homerow.app Mouse mode
+      m: {
+        to: [
+          {
+            key_code: "spacebar",
+            modifiers: ["left_shift", "left_command"],
+          },
+        ],
+      },
+      // Homerow.app Scroll mode
+      s: {
+        to: [
+          {
+            key_code: "j",
+            modifiers: ["left_shift", "left_command"],
+          },
+        ],
+      },
+    },
 
     // s = "System"
     s: {
@@ -192,23 +224,6 @@ const rules: KarabinerRules[] = [
       d: {
         to: [{ key_code: "page_down" }],
       },
-      // Magicmove via homerow.app
-      m: {
-        to: [{ key_code: "f", modifiers: ["right_control"] }],
-      },
-      // Scroll mode via homerow.app
-      s: {
-        to: [{ key_code: "j", modifiers: ["right_control"] }],
-      },
-      b: {
-        to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
-      },
-      t: {
-        to: [{ key_code: "page_down" }],
-      },
-      i: {
-        to: [{ key_code: "page_up" }],
-      },
     },
 
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
@@ -228,15 +243,11 @@ const rules: KarabinerRules[] = [
     r: {
       c: open("raycast://extensions/thomas/color-picker/pick-color"),
       n: open("raycast://script-commands/dismiss-notifications"),
-      l: open(
-        "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
-      ),
       e: open(
         "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
       ),
       p: open("raycast://extensions/raycast/raycast/confetti"),
       a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
-      s: open("raycast://extensions/peduarte/silent-mention/index"),
       h: open(
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
       ),
