@@ -119,6 +119,35 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      // change to a specific language, doc: https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to/select-input-source/
+      // e = "English"
+      1: {
+        to: [
+          {
+            select_input_source: {
+              input_source_id: "^com\\.apple\\.keylayout\\.ABC$",
+            },
+          },
+        ],
+      },
+      2: {
+        to: [
+          {
+            select_input_source: {
+              language: "^ru$",
+            },
+          },
+        ],
+      },
+      3: {
+        to: [
+          {
+            select_input_source: {
+              input_source_id: "^com\\.apple\\.keylayout\\.Czech-QWERTY$",
+            },
+          },
+        ],
+      },
       // Homerow.app Mouse mode
       m: {
         to: [
