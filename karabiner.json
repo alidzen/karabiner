@@ -64,6 +64,43 @@
                                     }
                                 ],
                                 "type": "basic"
+                            },
+                            {
+                                "description": "Assign Tilde",
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_command"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Assign Grave Accent",
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -357,9 +394,9 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open -a 'Notes.app'",
+                                "description": "Open -a 'Tasks.app'",
                                 "from": {
-                                    "key_code": "n",
+                                    "key_code": "g",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -368,7 +405,7 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'Notes.app'"
+                                        "shell_command": "open -a 'Tasks.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -381,9 +418,9 @@
                                         "value": 1
                                     }
                                 ],
-                                "description": "Open -a 'ChatGPT.app'",
+                                "description": "Open -a 'Tasks.app'",
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -392,7 +429,31 @@
                                 },
                                 "to": [
                                     {
-                                        "shell_command": "open -a 'ChatGPT.app'"
+                                        "shell_command": "open -a 'Tasks.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'Notes.app'",
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'Notes.app'"
                                     }
                                 ],
                                 "type": "basic"
@@ -489,6 +550,30 @@
                                 "to": [
                                     {
                                         "shell_command": "open -a 'Visual Studio Code.app'"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "hyper_sublayer_o",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Open -a 'ChatGPT.app'",
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open -a 'ChatGPT.app'"
                                     }
                                 ],
                                 "type": "basic"

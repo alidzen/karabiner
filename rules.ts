@@ -50,6 +50,37 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
+      {
+        type: "basic",
+        description: "Assign Tilde",
+        from: {
+          key_code: "escape",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        description: "Assign Grave Accent",
+        from: {
+          key_code: "escape",
+          modifiers: {
+            mandatory: ["left_option"],
+          },
+        },
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+            modifiers: ["left_shift"],
+          },
+        ],
+      },
       //      {
       //        type: "basic",
       //        description: "Disable CMD + Tab to force Hyper Key usage",
@@ -81,15 +112,17 @@ const rules: KarabinerRules[] = [
       // Explorer
       e: app("Finder"),
       f: app("Firefox"),
+      g: app("Tasks"),
+      j: app("Tasks"),
       n: app("Notes"),
-      // AI, *L*LMs
-      l: app("ChatGPT"),
       // Messenger
       m: app("Telegram"),
       s: app("Slack"),
       // Terminal
       t: app("Kitty"),
       v: app("Visual Studio Code"),
+      // AI, just simple to press
+      q: app("ChatGPT"),
       z: app("zoom.us"),
     },
 
