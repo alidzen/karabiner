@@ -112,7 +112,7 @@ const rules: KarabinerRules[] = [
       // Explorer
       e: app("Finder"),
       f: app("Firefox"),
-      g: app("Tasks"),
+      g: app("GitLab"),
       j: app("Tasks"),
       n: app("Notes"),
       // Messenger
@@ -140,6 +140,15 @@ const rules: KarabinerRules[] = [
     //     open -g "raycast://customWindowManagementCommand?position=topRight&relativeWidth=0.5"
     //   `,
     // },
+
+    // f = "Find"
+    f: {
+      d: open(
+        "raycast://extensions/michaelschultz/figma-files-raycast-extension/index"
+      ),
+      t: open("raycast://extensions/Codely/google-chrome/search-tab"),
+      h: open("raycast://extensions/Codely/google-chrome/search-history"),
+    },
 
     // i = "Input"
     i: {
