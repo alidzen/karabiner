@@ -128,18 +128,21 @@ const rules: KarabinerRules[] = [
 
     // TODO: This doesn't quite work yet.
     // l = "Layouts" via Raycast's custom window management
-    // l: {
-    //   // Coding layout
-    //   c: shell`
-    //     open -a "Visual Studio Code.app"
-    //     sleep 0.2
-    //     open -g "raycast://customWindowManagementCommand?position=topLeft&relativeWidth=0.5"
-
-    //     open -a "Terminal.app"
-    //     sleep 0.2
-    //     open -g "raycast://customWindowManagementCommand?position=topRight&relativeWidth=0.5"
-    //   `,
-    // },
+    l: {
+      // m - maximize
+      m: shell`open -g "raycast://extensions/raycast/window-management/almost-maximize"`,
+      // f - full screen
+      f: shell`open -g "raycast://extensions/raycast/window-management/maximize"`,
+      // c -center
+      c: shell`open -g "raycast://extensions/raycast/window-management/top-center-two-thirds"`,
+      // h,g — to pull in different directions
+      h: shell`open -g "raycast://extensions/raycast/window-management/last-third"`,
+      g: shell`open -g "raycast://extensions/raycast/window-management/first-three-fourths"`,
+      // left
+      a: shell`open -g "raycast://extensions/raycast/window-management/left-half"`,
+      // right
+      d: shell`open -g "raycast://extensions/raycast/window-management/right-half"`,
+    },
 
     // f = "Find"
     f: {
