@@ -122,8 +122,8 @@ const rules: KarabinerRules[] = [
       t: app("Kitty"),
       v: app("Visual Studio Code"),
       // AI, just simple to press
+      x: app("Xcode"),
       q: app("ChatGPT"),
-      z: app("zoom.us"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -133,7 +133,7 @@ const rules: KarabinerRules[] = [
       m: shell`open -g "raycast://extensions/raycast/window-management/almost-maximize"`,
       // f - full screen
       f: shell`open -g "raycast://extensions/raycast/window-management/maximize"`,
-      // c -center
+      // c - center
       c: shell`open -g "raycast://extensions/raycast/window-management/top-center-two-thirds"`,
       // h,g — to pull in different directions
       h: shell`open -g "raycast://extensions/raycast/window-management/last-third"`,
@@ -142,6 +142,8 @@ const rules: KarabinerRules[] = [
       a: shell`open -g "raycast://extensions/raycast/window-management/left-half"`,
       // right
       d: shell`open -g "raycast://extensions/raycast/window-management/right-half"`,
+      // z - zen mode
+      z: shell`open -g "raycast://extensions/raycast/system/hide-all-apps-except-frontmost"`,
     },
 
     // f = "Find"
@@ -151,6 +153,8 @@ const rules: KarabinerRules[] = [
       ),
       t: open("raycast://extensions/Codely/google-chrome/search-tab"),
       h: open("raycast://extensions/Codely/google-chrome/search-history"),
+      // notes
+      n: open("raycast://extensions/raycast/apple-notes/index"),
     },
 
     // i = "Input"
@@ -298,6 +302,14 @@ const rules: KarabinerRules[] = [
       d: {
         to: [{ key_code: "page_down" }],
       },
+      // h**O**me
+      o: {
+        to: [{ key_code: "home" }],
+      },
+      // e**N**d
+      n: {
+        to: [{ key_code: "end" }],
+      },
     },
 
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
@@ -331,6 +343,26 @@ const rules: KarabinerRules[] = [
       2: open(
         "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
       ),
+    },
+
+    // w = "Winodw"
+    w: {
+      open_bracket: {
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+            modifiers: ["left_shift", "left_command"],
+          },
+        ],
+      },
+      close_bracket: {
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+            modifiers: ["left_command"],
+          },
+        ],
+      },
     },
   }),
 ];
