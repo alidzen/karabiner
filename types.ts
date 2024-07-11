@@ -116,6 +116,7 @@ export interface To {
   mouse_key?: MouseKey;
   pointing_button?: string;
   select_input_source?: InputSource;
+  lazy?: boolean;
   /**
    * Power Management plugin
    * @example: sleep system

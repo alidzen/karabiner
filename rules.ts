@@ -22,6 +22,12 @@ const rules: KarabinerRules[] = [
               value: 1,
             },
           },
+          {
+            set_variable: {
+              name: "vim_mode",
+              value: 0,
+            },
+          },
         ],
         to_after_key_up: [
           {
@@ -96,6 +102,116 @@ const rules: KarabinerRules[] = [
       //          },
       //        ],
       //      },
+    ],
+  },
+  {
+    description: "Press Right Command to toggle Vimish navigation",
+    manipulators: [
+      {
+        type: "basic",
+        from: {
+          key_code: "right_command",
+        },
+        to: [{ key_code: "right_command", lazy: true }],
+        to_if_alone: [
+          { set_variable: { name: "vim_mode", value: 1 } },
+          {
+            shell_command:
+              'osascript -e \'display notification "Press [⌃] to switch on/off" with title "-- Vimish Navigation [On] --"\'',
+          },
+        ],
+        conditions: [{ type: "variable_unless", name: "vim_mode", value: 1 }],
+      },
+      {
+        type: "basic",
+        from: { key_code: "right_command" },
+        to: [{ key_code: "right_command", lazy: true }],
+        to_if_alone: [
+          { set_variable: { name: "vim_mode", value: 0 } },
+          {
+            shell_command:
+              'osascript -e \'display notification "Press [⌃] to switch on/off" with title "-- Vimish Navigation [Off] --"\'',
+          },
+        ],
+        conditions: [{ type: "variable_if", name: "vim_mode", value: 1 }],
+      },
+    ],
+  },
+  {
+    description: "H/J/K/L -> ← ↓ ↑ →, PgUp, PgDn, Home, End -> u d o n",
+    manipulators: [
+      {
+        type: "basic",
+        from: { key_code: "h", modifiers: { optional: ["any"] } },
+        to: [{ key_code: "left_arrow" }],
+        conditions: [
+          { type: "variable_if", name: "vim_mode", value: 1 },
+          {
+            type: "frontmost_application_unless",
+            bundle_identifiers: ["^net\\.kovidgoyal\\.kitty$"],
+          },
+        ],
+      },
+      {
+        type: "basic",
+        from: { key_code: "j", modifiers: { optional: ["any"] } },
+        to: [{ key_code: "down_arrow" }],
+        conditions: [
+          { type: "variable_if", name: "vim_mode", value: 1 },
+          {
+            type: "frontmost_application_unless",
+            bundle_identifiers: ["^net\\.kovidgoyal\\.kitty$"],
+          },
+        ],
+      },
+      {
+        type: "basic",
+        from: { key_code: "k", modifiers: { optional: ["any"] } },
+        to: [{ key_code: "up_arrow" }],
+        conditions: [
+          { type: "variable_if", name: "vim_mode", value: 1 },
+          {
+            type: "frontmost_application_unless",
+            bundle_identifiers: ["^net\\.kovidgoyal\\.kitty$"],
+          },
+        ],
+      },
+      {
+        type: "basic",
+        from: { key_code: "l", modifiers: { optional: ["any"] } },
+        to: [{ key_code: "right_arrow" }],
+        conditions: [
+          { type: "variable_if", name: "vim_mode", value: 1 },
+          {
+            type: "frontmost_application_unless",
+            bundle_identifiers: ["^net\\.kovidgoyal\\.kitty$"],
+          },
+        ],
+      },
+      {
+        type: "basic",
+        from: { key_code: "o", modifiers: { optional: ["any"] } },
+        to: [{ key_code: "home" }],
+        conditions: [
+          { type: "variable_if", name: "vim_mode", value: 1 },
+          {
+            type: "frontmost_application_unless",
+            bundle_identifiers: ["^net\\.kovidgoyal\\.kitty$"],
+          },
+        ],
+      },
+      {
+        type: "basic",
+        from: { key_code: "n", modifiers: { optional: ["any"] } },
+        to: [{ key_code: "end" }],
+        conditions: [
+          { type: "variable_if", name: "vim_mode", value: 1 },
+          {
+            type: "frontmost_application_unless",
+            bundle_identifiers: ["^net\\.kovidgoyal\\.kitty$"],
+          },
+        ],
+      },
     ],
   },
   ...createHyperSubLayers({
