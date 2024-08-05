@@ -138,6 +138,39 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
+    description: "App switching for design testing",
+    manipulators: [
+      {
+        type: "basic",
+        from: {
+          key_code: "2",
+          modifiers: {
+            mandatory: ["left_option"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'Google Chrome.app'",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        from: {
+          key_code: "3",
+          modifiers: {
+            mandatory: ["left_option"],
+          },
+        },
+        to: [
+          {
+            shell_command: "open -a 'Figma.app'",
+          },
+        ],
+      },
+    ],
+  },
+  {
     description: "H/J/K/L -> ← ↓ ↑ →, PgUp, PgDn, Home, End -> u d o n",
     manipulators: [
       {
@@ -218,6 +251,8 @@ const rules: KarabinerRules[] = [
     // b = "B"rowse
     b: {
       t: open("https://twitter.com"),
+      // Jira
+      j: open("https://app.shortcut.com/oppty/stories/space/22020"),
     },
     // o = "Open" applications
     o: {
@@ -228,8 +263,8 @@ const rules: KarabinerRules[] = [
       // Explorer
       e: app("Finder"),
       f: app("Firefox"),
-      g: app("GitLab"),
-      j: app("Tasks"),
+      // g: app("GitLab"),
+      // j: app("Tasks"),
       n: app("Notes"),
       // Messenger
       m: app("Telegram"),
@@ -238,7 +273,7 @@ const rules: KarabinerRules[] = [
       t: app("Kitty"),
       v: app("Visual Studio Code"),
       // AI, just simple to press
-      x: app("Xcode"),
+      // x: app("Xcode"),
       q: app("ChatGPT"),
     },
 
@@ -267,10 +302,13 @@ const rules: KarabinerRules[] = [
       d: open(
         "raycast://extensions/michaelschultz/figma-files-raycast-extension/index"
       ),
-      t: open("raycast://extensions/Codely/google-chrome/search-tab"),
+      // Opened tab
+      o: open("raycast://extensions/Codely/google-chrome/search-tab"),
       h: open("raycast://extensions/Codely/google-chrome/search-history"),
+      b: open("raycast://extensions/Codely/google-chrome/search-bookmarks"),
       // notes
       n: open("raycast://extensions/raycast/apple-notes/index"),
+      p: open("raycast://extensions/thomas/visual-studio-code/index"),
     },
 
     // i = "Input"
