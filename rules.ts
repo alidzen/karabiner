@@ -248,6 +248,12 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
+    // e = Enternet Explrer/Safari specific commands
+    e: {
+      b: open("raycast://extensions/loris/safari/search-bookmarks"),
+      h: open("raycast://extensions/loris/safari/search-history"),
+      t: open("raycast://extensions/loris/safari/cloud-tabs"),
+    },
     // b = "B"rowse
     b: {
       t: open("https://twitter.com"),
@@ -256,19 +262,24 @@ const rules: KarabinerRules[] = [
     },
     // o = "Open" applications
     o: {
-      a: app("Arc"),
-      c: app("Google Chrome"),
       // Design
       d: app("Figma"),
-      // Explorer
-      e: app("Finder"),
-      f: app("Firefox"),
+      f: app("Finder"),
+      // Browser apps
+      c: app("Google Chrome"),
+      // S[a]fari
+      e: app("Safari"),
+      a: app("Firefox"),
       // g: app("GitLab"),
       // j: app("Tasks"),
       n: app("Notes"),
       // Messenger
       m: app("Telegram"),
-      s: app("Slack"),
+      p: app("Postman"),
+      // Just some hard pressed kombination
+      y: app("Slack"),
+      // Stickies
+      s: app("Stickies"),
       // Terminal
       t: app("Kitty"),
       v: app("Visual Studio Code"),
@@ -426,10 +437,6 @@ const rules: KarabinerRules[] = [
       e: open(
         `raycast://extensions/thomas/elgato-key-light/toggle?launchType=background`
       ),
-      // "D"o not disturb toggle
-      d: open(
-        `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
-      ),
       // "T"heme
       t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
       c: open("raycast://extensions/raycast/system/open-camera"),
@@ -495,8 +502,16 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
       ),
       2: open(
-        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
+        "raycast://extensions/VladCuciureanu/toothpick/disconnect-favorite-device-1"
       ),
+    },
+    // u = "Utils"
+    u: {
+      // "D"o not disturb toggle
+      d: shell`shortcuts run "Toggle Focus Mode"`,
+      // Set timer fot 30 minutes
+      1: shell`shortcuts run "Set Focus For 30 minutes"`,
+      2: shell`shortcuts run "Set Focus For Time"`,
     },
 
     // w = "Winodw"
