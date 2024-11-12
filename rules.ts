@@ -87,6 +87,66 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      {
+        type: "basic",
+        description: "Vim H navigation",
+        from: {
+          key_code: "h",
+          modifiers: {
+            mandatory: ["right_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "left_arrow",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        description: "Vim j navigation",
+        from: {
+          key_code: "j",
+          modifiers: {
+            mandatory: ["right_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "down_arrow",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        description: "Vim K navigation",
+        from: {
+          key_code: "k",
+          modifiers: {
+            mandatory: ["right_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "up_arrow",
+          },
+        ],
+      },
+      {
+        type: "basic",
+        description: "Vim L navigation",
+        from: {
+          key_code: "l",
+          modifiers: {
+            mandatory: ["right_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "right_arrow",
+          },
+        ],
+      },
       //      {
       //        type: "basic",
       //        description: "Disable CMD + Tab to force Hyper Key usage",
@@ -110,9 +170,9 @@ const rules: KarabinerRules[] = [
       {
         type: "basic",
         from: {
-          key_code: "right_command",
+          key_code: "right_shift",
         },
-        to: [{ key_code: "right_command", lazy: true }],
+        to: [{ key_code: "right_shift", lazy: true }],
         to_if_alone: [
           { set_variable: { name: "vim_mode", value: 1 } },
           {
@@ -124,8 +184,8 @@ const rules: KarabinerRules[] = [
       },
       {
         type: "basic",
-        from: { key_code: "right_command" },
-        to: [{ key_code: "right_command", lazy: true }],
+        from: { key_code: "right_shift" },
+        to: [{ key_code: "right_shift", lazy: true }],
         to_if_alone: [
           { set_variable: { name: "vim_mode", value: 0 } },
           {
@@ -272,6 +332,7 @@ const rules: KarabinerRules[] = [
       a: app("Firefox"),
       // g: app("GitLab"),
       // j: app("Tasks"),
+      i: app("IntelliJ IDEA Ultimate"),
       n: app("Notes"),
       // Messenger
       m: app("Telegram"),
@@ -284,8 +345,8 @@ const rules: KarabinerRules[] = [
       t: app("Kitty"),
       v: app("Visual Studio Code"),
       // AI, just simple to press
-      // x: app("Xcode"),
       q: app("ChatGPT"),
+      x: app("Firefox"),
     },
 
     // TODO: This doesn't quite work yet.
@@ -313,10 +374,6 @@ const rules: KarabinerRules[] = [
       d: open(
         "raycast://extensions/michaelschultz/figma-files-raycast-extension/index"
       ),
-      // Opened tab
-      o: open("raycast://extensions/Codely/google-chrome/search-tab"),
-      h: open("raycast://extensions/Codely/google-chrome/search-history"),
-      b: open("raycast://extensions/Codely/google-chrome/search-bookmarks"),
       // notes
       n: open("raycast://extensions/raycast/apple-notes/index"),
       p: open("raycast://extensions/thomas/visual-studio-code/index"),
@@ -473,8 +530,8 @@ const rules: KarabinerRules[] = [
       },
     },
 
-    // c = Musi*c* which isn't "m" because we want it to be on the left hand
-    c: {
+    // m = Music
+    m: {
       p: {
         to: [{ key_code: "play_or_pause" }],
       },
@@ -484,6 +541,14 @@ const rules: KarabinerRules[] = [
       b: {
         to: [{ key_code: "rewind" }],
       },
+    },
+
+    // c = Musi*c* which isn't "m" because we want it to be on the left hand
+    c: {
+      // Opened tab
+      t: open("raycast://extensions/Codely/google-chrome/search-tab"),
+      h: open("raycast://extensions/Codely/google-chrome/search-history"),
+      b: open("raycast://extensions/Codely/google-chrome/search-bookmarks"),
     },
 
     // r = "Raycast"
@@ -510,8 +575,7 @@ const rules: KarabinerRules[] = [
       // "D"o not disturb toggle
       d: shell`shortcuts run "Toggle Focus Mode"`,
       // Set timer fot 30 minutes
-      1: shell`shortcuts run "Set Focus For 30 minutes"`,
-      2: shell`shortcuts run "Set Focus For Time"`,
+      1: shell`shortcuts run "Set Focus For Time"`,
     },
 
     // w = "Winodw"
