@@ -170,9 +170,9 @@ const rules: KarabinerRules[] = [
       {
         type: "basic",
         from: {
-          key_code: "right_shift",
+          key_code: "right_command",
         },
-        to: [{ key_code: "right_shift", lazy: true }],
+        to: [{ key_code: "right_command", lazy: true }],
         to_if_alone: [
           { set_variable: { name: "vim_mode", value: 1 } },
           {
@@ -184,8 +184,8 @@ const rules: KarabinerRules[] = [
       },
       {
         type: "basic",
-        from: { key_code: "right_shift" },
-        to: [{ key_code: "right_shift", lazy: true }],
+        from: { key_code: "right_command" },
+        to: [{ key_code: "right_command", lazy: true }],
         to_if_alone: [
           { set_variable: { name: "vim_mode", value: 0 } },
           {
@@ -338,12 +338,13 @@ const rules: KarabinerRules[] = [
       m: app("Telegram"),
       p: app("Postman"),
       // Just some hard pressed kombination
-      y: app("Slack"),
+      // y: app("Slack"), disabled, because of bad habbit
       // Stickies
       s: app("Stickies"),
       // Terminal
       t: app("Kitty"),
       v: app("Visual Studio Code"),
+      w: app("WebStorm"),
       // AI, just simple to press
       q: app("ChatGPT"),
       x: app("Firefox"),
@@ -527,6 +528,22 @@ const rules: KarabinerRules[] = [
       // e**N**d
       n: {
         to: [{ key_code: "end" }],
+      },
+      i: {
+        to: [
+          {
+            key_code: "left_arrow",
+            modifiers: ["left_command"],
+          },
+        ],
+      },
+      m: {
+        to: [
+          {
+            key_code: "right_arrow",
+            modifiers: ["left_command"],
+          },
+        ],
       },
     },
 
