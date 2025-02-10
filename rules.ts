@@ -499,6 +499,12 @@ const rules: KarabinerRules[] = [
       t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
       c: open("raycast://extensions/raycast/system/open-camera"),
     },
+    t: {
+      l: open(`raycast://extensions/louishuyng/tmux-sessioner/index`),
+      w: open(
+        `raycast://extensions/louishuyng/tmux-sessioner/manage_tmux_windows`
+      ),
+    },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
