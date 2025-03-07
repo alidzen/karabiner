@@ -623,30 +623,6 @@
                     "value": 1
                   }
                 ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "defbro com.apple.Safari"
-                  }
-                ],
-                "description": "defbro com.apple.Safari",
-                "type": "basic",
-                "from": {
-                  "key_code": "d",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_e",
-                    "value": 1
-                  }
-                ]
               }
             ]
           },
@@ -756,34 +732,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://app.shortcut.com/oppty/stories/space/22020"
+                    "shell_command": "open https://twitter.com"
                   }
                 ],
-                "description": "Open https://app.shortcut.com/oppty/stories/space/22020",
-                "type": "basic",
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_b",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://extensions/ron-myers/brave/search-tab"
-                  }
-                ],
-                "description": "Open raycast://extensions/ron-myers/brave/search-tab",
+                "description": "Open https://twitter.com",
                 "type": "basic",
                 "from": {
                   "key_code": "t",
@@ -804,37 +756,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/ron-myers/brave/search-history"
+                    "shell_command": "open https://app.shortcut.com/oppty/stories/space/22020"
                   }
                 ],
-                "description": "Open raycast://extensions/ron-myers/brave/search-history",
+                "description": "Open https://app.shortcut.com/oppty/stories/space/22020",
                 "type": "basic",
                 "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_b",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://extensions/ron-myers/brave/search-bookmarks"
-                  }
-                ],
-                "description": "Open raycast://extensions/ron-myers/brave/search-bookmarks",
-                "type": "basic",
-                "from": {
-                  "key_code": "b",
+                  "key_code": "j",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -950,30 +878,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -a 'Brave Browser.app'"
-                  }
-                ],
-                "description": "Open -a 'Brave Browser.app'",
-                "type": "basic",
-                "from": {
-                  "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
                     "value": 1
                   }
                 ]
@@ -1173,10 +1077,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Perplexity.app'"
+                    "shell_command": "open -a 'Postman.app'"
                   }
                 ],
-                "description": "Open -a 'Perplexity.app'",
+                "description": "Open -a 'Postman.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "p",
@@ -3247,30 +3151,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "b",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_c",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "defbro com.google.Chrome"
-                  }
-                ],
-                "description": "defbro com.google.Chrome",
-                "type": "basic",
-                "from": {
-                  "key_code": "d",
                   "modifiers": {
                     "optional": [
                       "any"

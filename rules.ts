@@ -313,15 +313,20 @@ const rules: KarabinerRules[] = [
       b: open("raycast://extensions/loris/safari/search-bookmarks"),
       h: open("raycast://extensions/loris/safari/search-history"),
       t: open("raycast://extensions/loris/safari/cloud-tabs"),
+      d: shell`defbro com.apple.Safari`,
     },
     // b = "B"rowse
     b: {
-      t: open("https://twitter.com"),
       // Jira
       j: open("https://app.shortcut.com/oppty/stories/space/22020"),
+      // Opened tab
+      t: open("raycast://extensions/ron-myers/brave/search-tab"),
+      h: open("raycast://extensions/ron-myers/brave/search-history"),
+      b: open("raycast://extensions/ron-myers/brave/search-bookmarks"),
     },
     // o = "Open" applications
     o: {
+      b: app("Brave Browser"),
       // Design
       d: app("Figma"),
       f: app("Finder"),
@@ -336,7 +341,7 @@ const rules: KarabinerRules[] = [
       n: app("Notes"),
       // Messenger
       m: app("Telegram"),
-      p: app("Postman"),
+      p: app("Perplexity"),
       // Just some hard pressed kombination
       // y: app("Slack"), disabled, because of bad habbit
       // Stickies
@@ -566,12 +571,13 @@ const rules: KarabinerRules[] = [
       },
     },
 
-    // c = Musi*c* which isn't "m" because we want it to be on the left hand
+    // c = Chrome
     c: {
       // Opened tab
       t: open("raycast://extensions/Codely/google-chrome/search-tab"),
       h: open("raycast://extensions/Codely/google-chrome/search-history"),
       b: open("raycast://extensions/Codely/google-chrome/search-bookmarks"),
+      d: shell`defbro com.google.Chrome`,
     },
 
     // r = "Raycast"
