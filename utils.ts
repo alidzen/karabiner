@@ -1,3 +1,4 @@
+import { exec, execSync } from "child_process";
 import { To, KeyCode, Manipulator, KarabinerRules } from "./types";
 
 /**
@@ -210,4 +211,32 @@ export function rectangle(name: string): LayerCommand {
  */
 export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
+}
+
+/**
+ * Shortcut for "Switch to an app" command (of which there are a bunch)
+ * Prevent to open the app if it is not running
+ * Prevent accidentally opening heavy apps such as Zoom, Slack, and Figma by hitting their shortcuts.
+ **/
+export function switchApp(name: string): LayerCommand {
+  try {
+    const appProcessCounter = execSync(`ps aux | grep --count ${name}`, {
+      encoding: "utf-8",
+    });
+    console.log(appProcessCounter);
+    // if counter is 1 this meand that ps aux return grep command with the parameter itself
+    const minCounter = name.includes("Figma") ? 3 : 2;
+    // TODO: move nodejs command outside of karabiner, to be able to deal with dynamic values
+    execSync(
+      'osascript -e \'display notification "Press [⌃] to switch on/off" with title "-- Vimish Navigation [On] --"\'',
+      { encoding: "utf-8" }
+    );
+    if (Number(appProcessCounter) >= minCounter) {
+      return open(`-a '${name}.app'`);
+    }
+    return open(`-a 'notExistenApp.app`);
+  } catch (e) {
+    console.error(e);
+    return open(`-a 'notExistenApp.app`);
+  }
 }

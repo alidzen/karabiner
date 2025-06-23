@@ -1,6 +1,13 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
+import {
+  createHyperSubLayers,
+  app,
+  open,
+  rectangle,
+  shell,
+  switchApp,
+} from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -318,7 +325,13 @@ const rules: KarabinerRules[] = [
     // b = "B"rowse
     b: {
       // Jira
-      j: open("https://app.shortcut.com/oppty/stories/space/22020"),
+      j: open(
+        "-a 'Google Chrome.app' https://app.shortcut.com/oppty/stories/space/22020"
+      ),
+      // Notion "L"ist
+      l: open(
+        "-a Safari.app https://www.notion.so/be6656a7e7fe48afab49d43450908ce6"
+      ),
       // Opened tab
       t: open("raycast://extensions/ron-myers/brave/search-tab"),
       h: open("raycast://extensions/ron-myers/brave/search-history"),
@@ -334,10 +347,10 @@ const rules: KarabinerRules[] = [
       c: app("Google Chrome"),
       // S[a]fari
       e: app("Safari"),
-      a: app("Firefox"),
+      // a: app("Claude"),
       // g: app("GitLab"),
       // j: app("Tasks"),
-      i: app("IntelliJ IDEA Ultimate"),
+      i: app("Iterm"),
       n: app("Notes"),
       // Messenger
       m: app("Telegram"),
@@ -349,12 +362,19 @@ const rules: KarabinerRules[] = [
       // Terminal
       t: app("Kitty"),
       v: app("Visual Studio Code"),
-      w: app("WebStorm"),
+      // w: app("WebStorm"),
+      w: app("Warp"),
       // AI, just simple to press
-      q: app("ChatGPT"),
+      q: app("Claude"),
+      g: app("Gemini LLM"),
       x: app("Firefox"),
+      z: app("IntelliJ IDEA Ultimate"),
     },
 
+    //  k = "C"ommand
+    k: {
+      b: open(`raycast://extensions/fernando_barrios/defbro/change_browser`),
+    },
     // TODO: This doesn't quite work yet.
     // l = "Layouts" via Raycast's custom window management
     l: {
@@ -569,6 +589,14 @@ const rules: KarabinerRules[] = [
       b: {
         to: [{ key_code: "rewind" }],
       },
+    },
+    // n = Notes
+    n: {
+      //
+      s: open("raycast://extensions/raycast/apple-notes/index"),
+      c: open(
+        "raycast://extensions/raycast/apple-notes/new?arguments=%7B%22text%22%3A%22%22%7D"
+      ),
     },
 
     // c = Chrome
