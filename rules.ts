@@ -217,7 +217,7 @@ const rules: KarabinerRules[] = [
         },
         to: [
           {
-            shell_command: "open -a 'Google Chrome.app'",
+            shell_command: "open -a 'Brave Browser.app'",
           },
         ],
       },
@@ -317,25 +317,37 @@ const rules: KarabinerRules[] = [
   ...createHyperSubLayers({
     // e = Enternet Explrer/Safari specific commands
     e: {
-      b: open("raycast://extensions/loris/safari/search-bookmarks"),
-      h: open("raycast://extensions/loris/safari/search-history"),
-      t: open("raycast://extensions/loris/safari/cloud-tabs"),
+      b: open("raycast://extensions/ron-myers/brave/search-bookmarks"),
+      h: open("raycast://extensions/ron-myers/brave/search-history"),
+      t: open("raycast://extensions/ron-myers/brave/search-tab"),
       d: shell`defbro com.apple.Safari`,
     },
     // b = "B"rowse
     b: {
       // Jira
       j: open(
-        "-a 'Google Chrome.app' https://app.shortcut.com/oppty/stories/space/22020"
+        "-a 'Brave Browser.app' https://semrush.atlassian.net/jira/software/c/projects/AIMP/boards/4683/"
       ),
       // Notion "L"ist
       l: open(
         "-a Safari.app https://www.notion.so/be6656a7e7fe48afab49d43450908ce6"
       ),
-      // Opened tab
-      t: open("raycast://extensions/ron-myers/brave/search-tab"),
-      h: open("raycast://extensions/ron-myers/brave/search-history"),
-      b: open("raycast://extensions/ron-myers/brave/search-bookmarks"),
+      // "M"eet
+      m: app("Google Meet"),
+      // "C"alendar
+      c: open(
+        "-a 'Brave Browser.app' https://calendar.google.com/calendar/u/0/r"
+      ),
+      // "E"alendar
+      e: open("https://mail.google.com/mail/u/0/#inbox"),
+      // "P"ipeline
+      p: open(
+        "https://gitlab.semrush.net/ai-marketing-platform/frontend/-/pipelines"
+      ),
+      // "F"rontend Merge Requests
+      f: open(
+        "https://gitlab.semrush.net/ai-marketing-platform/frontend/-/merge_requests"
+      ),
     },
     // o = "Open" applications
     o: {
@@ -350,25 +362,26 @@ const rules: KarabinerRules[] = [
       // a: app("Claude"),
       // g: app("GitLab"),
       // j: app("Tasks"),
-      i: app("Iterm"),
+      k: app("Amazon Kindle"),
+      // i: app("IntelliJ IDEA Ultimate"),
       n: app("Notes"),
       // Messenger
       m: app("Telegram"),
       p: app("Perplexity"),
       // Just some hard pressed kombination
-      // y: app("Slack"), disabled, because of bad habbit
+      y: app("Slack"),
       // Stickies
       s: app("Stickies"),
       // Terminal
       t: app("Kitty"),
-      v: app("Visual Studio Code"),
+      r: app("Ghostty"),
+      v: app("VSCodium"),
       // w: app("WebStorm"),
-      w: app("Warp"),
+      w: app("Notion"),
       // AI, just simple to press
       q: app("Claude"),
       g: app("Gemini LLM"),
       x: app("Firefox"),
-      z: app("IntelliJ IDEA Ultimate"),
     },
 
     //  k = "C"ommand
@@ -471,6 +484,13 @@ const rules: KarabinerRules[] = [
         to: [
           {
             key_code: "volume_increment",
+          },
+        ],
+      },
+      d: {
+        to: [
+          {
+            key_code: "fn",
           },
         ],
       },
