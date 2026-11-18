@@ -248,7 +248,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'Google Chrome.app'"
+                    "shell_command": "open -a 'Brave Browser.app'"
                   }
                 ]
               },
@@ -776,10 +776,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Google Chrome.app' https://app.shortcut.com/oppty/stories/space/22020"
+                    "shell_command": "open -a 'Brave Browser.app' https://semrush.atlassian.net/jira/software/c/projects/AIMP/boards/4683/"
                   }
                 ],
-                "description": "Open -a 'Google Chrome.app' https://app.shortcut.com/oppty/stories/space/22020",
+                "description": "Open -a 'Brave Browser.app' https://semrush.atlassian.net/jira/software/c/projects/AIMP/boards/4683/",
                 "type": "basic",
                 "from": {
                   "key_code": "j",
@@ -824,13 +824,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/ron-myers/brave/search-tab"
+                    "shell_command": "open -a 'Brave Browser.app' https://meet.google.com/landing?authuser=0"
                   }
                 ],
-                "description": "Open raycast://extensions/ron-myers/brave/search-tab",
+                "description": "Open -a 'Brave Browser.app' https://meet.google.com/landing?authuser=0",
                 "type": "basic",
                 "from": {
-                  "key_code": "t",
+                  "key_code": "m",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -848,13 +848,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/ron-myers/brave/search-history"
+                    "shell_command": "open -a 'Brave Browser.app' https://calendar.google.com/calendar/u/0/r"
                   }
                 ],
-                "description": "Open raycast://extensions/ron-myers/brave/search-history",
+                "description": "Open -a 'Brave Browser.app' https://calendar.google.com/calendar/u/0/r",
                 "type": "basic",
                 "from": {
-                  "key_code": "h",
+                  "key_code": "c",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -872,13 +872,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/ron-myers/brave/search-bookmarks"
+                    "shell_command": "open https://mail.google.com/mail/u/0/#inbox"
                   }
                 ],
-                "description": "Open raycast://extensions/ron-myers/brave/search-bookmarks",
+                "description": "Open https://mail.google.com/mail/u/0/#inbox",
                 "type": "basic",
                 "from": {
-                  "key_code": "b",
+                  "key_code": "e",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1131,13 +1131,13 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Firefox.app'"
+                    "shell_command": "open -a 'Amazon Kindle.app'"
                   }
                 ],
-                "description": "Open -a 'Firefox.app'",
+                "description": "Open -a 'Amazon Kindle.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "a",
+                  "key_code": "k",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1251,6 +1251,30 @@
               {
                 "to": [
                   {
+                    "shell_command": "open -a 'Slack.app'"
+                  }
+                ],
+                "description": "Open -a 'Slack.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "y",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "shell_command": "open -a 'Stickies.app'"
                   }
                 ],
@@ -1282,6 +1306,30 @@
                 "type": "basic",
                 "from": {
                   "key_code": "t",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Ghostty.app'"
+                  }
+                ],
+                "description": "Open -a 'Ghostty.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1347,13 +1395,37 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'ChatGPT.app'"
+                    "shell_command": "open -a 'Claude.app'"
                   }
                 ],
-                "description": "Open -a 'ChatGPT.app'",
+                "description": "Open -a 'Claude.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "q",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Gemini LLM.app'"
+                  }
+                ],
+                "description": "Open -a 'Gemini LLM.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "g",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -3700,10 +3772,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "dbc"
+                    "shell_command": "defbro com.google.Chrome"
                   }
                 ],
-                "description": "dbc",
+                "description": "defbro com.google.Chrome",
                 "type": "basic",
                 "from": {
                   "key_code": "d",

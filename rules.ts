@@ -358,12 +358,12 @@ const rules: KarabinerRules[] = [
       // Browser apps
       c: app("Google Chrome"),
       // S[a]fari
-      e: app("Safari"),
+      e: app("Vivaldi"),
       // a: app("Claude"),
       // g: app("GitLab"),
       // j: app("Tasks"),
       k: app("Amazon Kindle"),
-      // i: app("IntelliJ IDEA Ultimate"),
+      i: app("IntelliJ IDEA"),
       n: app("Notes"),
       // Messenger
       m: app("Telegram"),
@@ -380,7 +380,7 @@ const rules: KarabinerRules[] = [
       w: app("Notion"),
       // AI, just simple to press
       q: app("Claude"),
-      g: app("Gemini LLM"),
+      g: app("Gemini"),
       x: app("Firefox"),
     },
 
